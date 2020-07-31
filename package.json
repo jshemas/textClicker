@@ -1,0 +1,54 @@
+{
+  "name": "textClicker",
+  "description": "Clicker game made in Node.js",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "textClicker.js",
+  "scripts": {
+    "eslint:fix": "eslint . --ext .js --fix",
+    "eslint": "eslint . --ext .js",
+    "mocha:unit": "nyc --reporter=html --reporter=text --exclude=tests/ mocha --require ./tests/helpers/bootstrap.js --recursive \"./tests/unit/**/*.spec.js\"",
+    "test": "npm run mocha:unit"
+  },
+  "bin": {
+    "textClicker": "./textClicker.js"
+  },
+  "author": {
+    "name": "Josh Shemas",
+    "email": "jjs90jjs@gmail.com",
+    "url": "https://github.com/jshemas"
+  },
+  "dependencies": {
+    "lodash": "^4.17.19",
+    "lowdb": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-mocha": "^7.0.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "mocha": "^8.0.1",
+    "nyc": "^15.0.1",
+    "sinon": "^9.0.2",
+    "snyk": "^1.364.2"
+  },
+  "engines": {
+    "node": ">=10.x.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jshemas/textClicker.git",
+    "web": "http://github.com/jshemas/textClicker"
+  },
+  "keywords": [
+    "clicker game",
+    "clicker",
+    "fun",
+    "game"
+  ]
+}
