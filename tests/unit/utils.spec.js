@@ -7,7 +7,6 @@ const sandbox = sinon.createSandbox();
 describe('utils', function () {
   afterEach(function () {
     sandbox.restore();
-    db.updateUser.restore();
   });
   context('addExperience', function () {
     context('using a new skill', function () {
@@ -17,7 +16,7 @@ describe('utils', function () {
           level: 1,
           experience: 1,
         });
-        this.updateSpy = sinon.spy(db, 'updateUser');
+        this.updateSpy = sandbox.stub(db, 'updateUser').returns(true);
       });
       it('they leveled up', async function () {
         await utils.addExperience('fooExperience', 'fooLevel');
@@ -41,7 +40,7 @@ describe('utils', function () {
           fooExperience: 1,
           fooLevel: 1,
         });
-        this.updateSpy = sinon.spy(db, 'updateUser');
+        this.updateSpy = sandbox.stub(db, 'updateUser').returns(true);
       });
       it('they leveled up', async function () {
         await utils.addExperience('fooExperience', 'fooLevel');
@@ -65,7 +64,7 @@ describe('utils', function () {
           level: 1,
           experience: 100,
         });
-        this.updateSpy = sinon.spy(db, 'updateUser');
+        this.updateSpy = sandbox.stub(db, 'updateUser').returns(true);
       });
       it('they leveled up', async function () {
         await utils.levelUp('foo', 'bar', 'foobar');
@@ -81,7 +80,7 @@ describe('utils', function () {
           level: 1,
           experience: 0,
         });
-        this.updateSpy = sinon.spy(db, 'updateUser');
+        this.updateSpy = sandbox.stub(db, 'updateUser').returns(true);
       });
       it('they leveled up', async function () {
         await utils.levelUp('foo', 'bar', 'foobar');
@@ -99,7 +98,7 @@ describe('utils', function () {
           fooExperience: 100,
           fooLevel: 1,
         });
-        this.updateSpy = sinon.spy(db, 'updateUser');
+        this.updateSpy = sandbox.stub(db, 'updateUser').returns(true);
       });
       it('they leveled up', async function () {
         await utils.levelUp('foo', 'fooExperience', 'fooLevel');
@@ -123,7 +122,7 @@ describe('utils', function () {
           fooExperience: 0,
           fooLevel: 1,
         });
-        this.updateSpy = sinon.spy(db, 'updateUser');
+        this.updateSpy = sandbox.stub(db, 'updateUser').returns(true);
       });
       it('they leveled up', async function () {
         await utils.levelUp('foo', 'fooExperience', 'fooLevel');
