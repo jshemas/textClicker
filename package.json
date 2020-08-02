@@ -8,7 +8,8 @@
     "eslint:fix": "eslint . --ext .js --fix",
     "eslint": "eslint . --ext .js",
     "mocha:unit": "nyc --reporter=html --reporter=text --exclude=tests/ mocha --require ./tests/helpers/bootstrap.js --recursive \"./tests/unit/**/*.spec.js\"",
-    "test": "npm run mocha:unit"
+    "mocha:int": "mocha --require ./tests/helpers/bootstrap.js --recursive \"./tests/integration/**/*.spec.js\" --timeout 10000",
+    "test": "npm run mocha:unit && npm run mocha:int"
   },
   "bin": {
     "textClicker": "./textClicker.js"
