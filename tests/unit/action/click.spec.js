@@ -23,9 +23,8 @@ describe('click action', function () {
 
     it('was able to click', function () {
       return click.init()
-        .then(function ({ success, levelUp }) {
+        .then(function ({ success }) {
           expect(success).to.eql(true);
-          expect(levelUp).to.eql(false);
         });
     });
   });
@@ -46,9 +45,8 @@ describe('click action', function () {
     });
     it('was able to click', function () {
       return click.init()
-        .then(function ({ success, levelUp, itemAdded }) {
+        .then(function ({ success, itemAdded }) {
           expect(success).to.eql(true);
-          expect(levelUp).to.eql(false);
           expect(itemAdded).to.eql(false);
         });
     });
@@ -70,9 +68,8 @@ describe('click action', function () {
     });
     it('was able to click and got item', function () {
       return click.init()
-        .then(function ({ success, levelUp, itemAdded }) {
+        .then(function ({ success, itemAdded }) {
           expect(success).to.eql(true);
-          expect(levelUp).to.eql(false);
           expect(itemAdded).to.eql(true);
         });
     });
@@ -92,9 +89,8 @@ describe('click action', function () {
     });
     it('was able to click and got item', function () {
       return click.init()
-        .then(function ({ success, levelUp, itemAdded }) {
+        .then(function ({ success, itemAdded }) {
           expect(success).to.eql(true);
-          expect(levelUp).to.eql(false);
           expect(itemAdded).to.eql(true);
         });
     });
@@ -115,9 +111,8 @@ describe('click action', function () {
     });
     it('was able to click', function () {
       return click.init()
-        .then(function ({ success, levelUp }) {
+        .then(function ({ success }) {
           expect(success).to.eql(true);
-          expect(levelUp).to.eql(true);
         });
     });
   });
